@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="digitalClock visible">
+        <h1>Digital Clock</h1>
+        <p id="date">Thursday, July 24, 2025</p>
+        <p id="time">3:48:13 PM</p>
+    </div>
+
+    <div class="analogClock">
+        <h1>Analog Clock</h1>
+        <div class="face">
+            <div class="ticks"></div>
+            <div class="hand hour" id="hour"></div>
+            <div class="hand minute" id="minute"></div>
+            <div class="hand second" id="second"></div>
+        </div>
+    </div>
+
+    <div class="flipClock">
+        <h1>Flip Clock</h1>
+        <div class="flipTime">
+            <button id="flipHour">03</button>
+            <button id="flipMinute">48</button>
+            <button id="flipSecond">13</button>
+            <button id="flipAmpm">PM</button>
+        </div>
+    </div>
+
+    <div class="clocks">
+        <button id="digital" class="clicked">Digital Clock</button>
+        <button id="analog">Analog Clock</button>
+        <button id="flip">Flip Clock</button>
+    </div>
+</body>
+</html>

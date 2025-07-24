@@ -1,0 +1,170 @@
+body {
+    background: #000;
+}
+
+.digitalClock,
+.analogClock,
+.flipClock {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.visible {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+p {
+    color: white;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#date {
+    font-size: 30px;
+    padding-top: 50px;
+}
+#time {
+    font-size: 100px;
+    margin: 0;
+}
+
+.analogClock {
+    text-align: center;
+}
+.face {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    margin: 70px auto;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 0 20px rgba(0,0,0,0.3);
+}
+.face::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+.hand {
+     position: absolute;
+     bottom: 50%;
+     left: 50%;
+     transform-origin: bottom center;
+     transform: rotate(90deg);
+}
+.hour {
+    width: 6px;
+    height: 70px;
+    background: #000;
+    z-index: 3;
+    border-radius: 6px;
+}
+.minute {
+    width: 4px;
+    height: 100px;
+    background: #000;
+    z-index: 2;
+    border-radius: 4px;
+}
+.second {
+    width: 2px;
+    height: 120px;
+    background: red;
+    z-index: 1;
+    border-radius: 2px;
+}
+.ticks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.tick {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: #444;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom center;
+}
+.tick.hour-mark {
+    height: 20px;
+    width: 4px;
+    background: #000;
+}
+
+.flipTime {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.flipTime::before {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    z-index: 0;
+}
+.flipTime button{
+    width: 20vh;
+    height: 20vh;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+    background: #444;
+    color: #fff;
+    border: none;
+    margin: 10px;
+    margin-top: 80px;
+}
+
+.clocks {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 70px;
+    margin-top: 70vh;
+}
+
+.clocks button {
+    font-size: 15px;
+    color: #444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    border-radius: 30px;
+}
+
+.clocks button:hover {
+    color: #fff;
+}
+
+.clocks button.clicked {
+    color: #fff;
+    background: #0f689b;
+}
