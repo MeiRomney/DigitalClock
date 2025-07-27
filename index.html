@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="digitalClock visible">
+        <h1>Digital Clock</h1>
+        <p id="date">Thursday, July 24, 2025</p>
+        <p id="time">3:48:13 PM</p>
+    </div>
+
+    <div class="analogClock">
+        <h1>Analog Clock</h1>
+        <div class="face">
+            <div class="ticks"></div>
+            <div class="hand hour" id="hour"></div>
+            <div class="hand minute" id="minute"></div>
+            <div class="hand second" id="second"></div>
+        </div>
+    </div>
+
+    <div class="flipClock">
+        <h1>Flip Clock</h1>
+        <div class="flipTime">
+            <!-- <button id="flipHour">03</button>
+            <button id="flipMinute">48</button>
+            <button id="flipSecond">13</button>
+            <button id="flipAmpm">PM</button> -->
+
+            <div class="flip-digit" id="flipHour">
+                <div class="top">03</div>
+                <div class="bottom">03</div>
+                <div class="flip">
+                    <div class="flip-top">03</div>
+                    <div class="flip-bottom">03</div>
+                </div>
+            </div>
+            <div class="flip-digit" id="flipMinute">
+                <div class="top">48</div>
+                <div class="bottom">48</div>
+                <div class="flip">
+                    <div class="flip-top">48</div>
+                    <div class="flip-bottom">48</div>
+                </div>
+            </div>
+            <div class="flip-digit" id="flipSecond">
+                <div class="top">13</div>
+                <div class="bottom">13</div>
+                <div class="flip">
+                    <div class="flip-top">13</div>
+                    <div class="flip-bottom">13</div>
+                </div>
+            </div>
+            <div class="flip-digit" id="flipAmpm">
+                <div class="top">PM</div>
+                <div class="bottom">PM</div>
+                <div class="flip">
+                    <div class="flip-top">PM</div>
+                    <div class="flip-bottom">PM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clocks">
+        <button id="digital" class="clicked">Digital Clock</button>
+        <button id="analog">Analog Clock</button>
+        <button id="flip">Flip Clock</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
