@@ -77,6 +77,27 @@ function createAnalogMarks() {
 }
 createAnalogMarks();
 
+// Flip clock
+function flipTo(element, newVal) {
+    const top = element.querySelector(".top");
+    const bottom = element.querySelector(".bottom");
+    const flip = element.querySelector(".flip");
+    const flipTop = element.querySelector(".flip-top");
+    const flipBottom = element.querySelector(".flip-bottom");
+
+    if(top.textContent === newVal) return;
+
+    flip.classList.add("animate");
+    flipTop.textContent = top.textContent;
+    flipBottom.textContent = newVal;
+
+    setTimeout(() => {
+        top.textContent = newVal;
+        bottom.textContent = newVal;
+        flip.classList.remove("animate");
+    }, 600);
+}
+
 function updateClocks() {
     const now = new Date();
 
@@ -98,10 +119,14 @@ function updateClocks() {
     document.getElementById("date").textContent = now.toLocaleDateString("en-US", options);
 
     // Flip Clock
-    document.getElementById("flipHour").textContent = formattedHour;
-    document.getElementById("flipMinute").textContent = formattedMinute;
-    document.getElementById("flipSecond").textContent = formattedSecond;
-    document.getElementById("flipAmpm").textContent = ampm;
+    // document.getElementById("flipHour").textContent = formattedHour;
+    // document.getElementById("flipMinute").textContent = formattedMinute;
+    // document.getElementById("flipSecond").textContent = formattedSecond;
+    // document.getElementById("flipAmpm").textContent = ampm;
+    flipTo(document.getElementById("flipHour"), formattedHour);
+    flipTo(document.getElementById("flipMinute"), formattedMinute);
+    flipTo(document.getElementById("flipSecond"), formattedSecond);
+    flipTo(document.getElementById("flipAmpm"), ampm);
 
     // Analog Clock
     const secondDeg = seconds * 6; // 360deg / 60
