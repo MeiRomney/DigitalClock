@@ -30,6 +30,53 @@ flipButton.onclick = () => {
     flipButton.classList.add("clicked");
 }
 
+// Design for Analog Clock
+function createAnalogMarks() {
+    const ticksContainer = document.querySelector(".ticks");
+
+    // Generate 60 minute ticks
+    for(let i = 0; i < 60; i++) {
+        const tick = document.createElement("div");
+        tick.classList.add("tick");
+        if(i % 5 === 0) continue;
+        // if(i % 5 === 0) tick.classList.add("hour-mark");
+
+        tick.style.transform = `rotate(${i * 6}deg) translateX(-2px) translateY(-140px)`;
+        ticksContainer.appendChild(tick);
+    }
+    for(let i = 0; i < 12; i++) {
+        const tick = document.createElement("div");
+        tick.classList.add("tick", "hour-mark");
+        tick.style.transform = `rotate(${i * 30}deg) translateX(-2px) translateY(-130px)`;
+        ticksContainer.appendChild(tick);
+    }
+
+    // Add numbers at 12, 3, 6, 9
+    const numberMap = {
+        0: "12",
+        90: "3",
+        180: "6",
+        270: "9"
+    };
+
+    for (const [deg, num] of Object.entries(numberMap)) {
+        const number = document.createElement("div");
+        number.classList.add("clock-number");
+        number.textContent = num;
+
+        const radius = 115;
+        const rad = (parseInt(deg) - 90) * (Math.PI / 180);
+        const x = radius * Math.cos(rad);
+        const y = radius * Math.sin(rad);
+
+        number.style.left = `calc(50% + ${x}px)`;
+        number.style.top = `calc(50% + ${y}px)`;
+
+        document.querySelector(".face").appendChild(number);
+    }
+}
+createAnalogMarks();
+
 function updateClocks() {
     const now = new Date();
 
